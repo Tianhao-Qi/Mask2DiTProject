@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Mask²DiT: Dual Mask-based Diffusion Transformer for Multi-Scene Long Video Generation.">
+  <meta name="keywords" content="Generate multi-scene long videos!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mask²DiT: Dual Mask-based Diffusion Transformer for Multi-Scene Long Video Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Mask²DiT: Dual Mask-based Diffusion Transformer for Multi-Scene Long Video Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://tianhao-qi.github.io/">Tianhao Qi</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com.tw/citations?user=vYe1uCQAAAAJ&hl=zh-CN">Jianlong Yuan</a><sup>2✝</sup>,</span>
+              <span class="author-block">
+                <a href="https://wanquanf.github.io/">Wanquan Feng</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=8Efply8AAAAJ&hl=zh-CN">Shancheng Fang</a><sup>3✉</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=X21Fz-EAAAAJ&hl=en&authuser=1">Jiawei Liu</a><sup>2</sup>,</span>
+              </span>
+              <span class="author-block">
+                <a href="https://openreview.net/profile?id=~SiYu_Zhou3">SiYu Zhou</a><sup>2</sup>,
+              </span>
+              <br>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&authuser=1&user=9rWWCgUAAAAJ">Qian He</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://imcc.ustc.edu.cn/_upload/tpl/0d/13/3347/template3347/xiehongtao.html">Hongtao Xie</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a
+                  href="https://scholar.google.com.hk/citations?user=hxGs4ukAAAAJ&hl=zh-CN">Yongdong Zhang</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Science and Technology of China,</span>&nbsp;
+              <span class="author-block"><sup>2</sup>Bytedance Intelligent Creation,</span>&nbsp
+              <span class="author-block"><sup>3</sup>Yuanshi Inc.,</span>&nbsp
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>*</sup>Works done during the internship at Bytedance Intelligent Creation,</span>&nbsp;
+              <span class="author-block"><sup>✝</sup>Project lead,</span>&nbsp;
+              <span class="author-block"><sup>✉</sup>Corresponding author,</span>&nbsp
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"> 
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper(Coming soon)</span>
+                  </a>
+                </span>
+
+                <!-- Github link -->
+                <span class="link-block">
+                  <a href="https://github.com/Tianhao-Qi/Mask2DiT" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Teaser video-->
+  <!-- <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <img src="static/images/teaser.png" alt=""/>
+
+        <h2 class="content has-text-centered">
+          Given a style reference image, <b><i>DEADiff</i></b> is capable of synthesizing new images that resemble the style and are faithful to text prompts simultaneously. However, previous encoder-based methods (i.e., <b>T2I-Adapter</b>) significantly impair the text controllability of the diffusion-based text-to-image models.
+        </h2>
+      </div>
+    </div>
+  </section> -->
+  <!-- End teaser video -->
+
+
+
+  <!-- Paper abstract -->
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-2">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Sora has unveiled the immense potential of the Diffusion Transformer (DiT) architecture in single-scene video generation. However, the more challenging task of multi-scene video generation, which offers broader applications, remains relatively underexplored. To bridge this gap, we propose Mask$^2$DiT, a novel approach that establishes fine-grained, one-to-one alignment between video segments and their corresponding text annotations. Specifically, we introduce a symmetric binary mask at each attention layer within the DiT architecture, ensuring that each text annotation applies exclusively to its respective video segment while preserving temporal coherence across visual tokens. This attention mechanism enables precise segment-level textual-to-visual alignment, allowing the DiT architecture to effectively handle video generation tasks with a fixed number of scenes. To further equip the DiT architecture with the ability to generate additional scenes based on existing ones, we incorporate a segment-level conditional mask, which conditions each newly generated segment on the preceding video segments, thereby enabling auto-regressive scene extension. Both qualitative and quantitative experiments confirm that Mask$^2$DiT excels in maintaining visual consistency across segments while ensuring semantic alignment between each segment and its corresponding text description.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End paper abstract -->
+
+
+
+  <!-- Paper poster -->
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-">
+            <h2 class="title is-2">Method</h2>
+            <div class="columns is-centered has-text-justified">
+              <td colspan="3">
+                <img src="static/images/pipeline.png" alt="" width="700" />
+              </td>
+            </div>
+            <div class="content has-text-justified">
+              <td colspan="3">
+                <p>
+                  <i>Mask<sup>2</sup>DiT</i> is a dual-mask diffusion transformer designed for multi-scene video generation under a multi-prompt setting. Built upon the scalable DiT architecture, it introduces two key components: (1) a symmetric binary attention mask that ensures fine-grained alignment between each text prompt and its corresponding video segment, allowing the model to focus on scene-specific guidance while maintaining intra-segment visual coherence; and (2) a segment-level conditional mask that enables auto-regressive scene extension by conditioning the generation of each new scene on the preceding segments. To support this design, the model is trained in two stages: pretraining on concatenated single-scene clips to adapt to longer sequences, followed by fine-tuning on curated multi-scene datasets to improve consistency and alignment. During inference, these masking mechanisms guide the model to generate coherent and semantically aligned multi-scene videos, showing significant improvements over state-of-the-art baselines in both objective metrics and human evaluations.
+                </p>
+
+              </td>
+            </div>
+            <p><br></p>
+          </div>
+  </section>
+  <!--End paper poster -->
+
+  <!-- Video grid Extension -->
+  <!-- <section class="hero is-light is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="section-title">
+          <h2 class="title is-2 is-centered">More Examples</h2>
+        </div>
+  
+        <div id="results-carousel-more" class="carousel results-carousel">
+  
+          <div class="item item-puppet">
+            <div class="carousel-content">
+              <img src="static/images/more_1.png"
+                     alt="Puppet."/>
+            </div>
+          </div>
+  
+          <div class="item item-puppet">
+            <div class="carousel-content">
+              <img src="static/images/more_2.png"
+                     alt="Puppet."/>
+            </div>
+          </div>
+  
+          <div class="item item-puppet">
+            <div class="carousel-content">
+              <img src="static/images/more_3.png"
+                     alt="Puppet."/>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <!-- End video grid multi ref -->
+
+  <!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{tokenflow2023,
+        title = {TokenFlow: Consistent Diffusion Features for Consistent Video Editing},
+        author = {Geyer, Michal and Bar-Tal, Omer and Bagon, Shai and Dekel, Tali},
+        journal={arXiv preprint arxiv:2307.10373},
+        year={2023}
+        }</code></pre>
+    </div>
+  </section> -->
+  <!--End BibTex citation -->
+
+  <footer class="footer">
+    <div class="container">
+      <!-- <div class="content has-text-centered">
+        <a class="icon-link"
+           href="./static/videos/nerfies_paper.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div> -->
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+            <p>
+              Website source code based on the <a
+                href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> project page.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>
