@@ -125,6 +125,69 @@
 
 
   <!-- Teaser video-->
+  <!-- Step 1: 引入 Orbitron 字体，建议放在 <head> 中 -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Step 2: 页面中的内容区 -->
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+
+      <!-- 加了炫酷艺术字样式的标题 -->
+      <h2 class="title is-3 has-text-centered fancy-title">Model Capabilities</h2>
+
+      <div class="columns is-centered">
+
+        <!-- Fixed-Scene Generation -->
+        <div class="column is-half">
+          <div class="box has-text-centered" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h3 class="title is-4">🎬 Fixed-Scene Generation</h3>
+            <video controls autoplay muted playsinline loop style="border-radius: 8px; width: 100%;">
+              <source src="static/videos/fixed_scene.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-justified mt-3">
+              This video is generated in a single pass using three different text prompts, each guiding a 6-second scene, resulting in an 18-second multi-scene video.
+            </p>
+          </div>
+        </div>
+
+        <!-- Auto-regressive Scene Extension -->
+        <div class="column is-half">
+          <div class="box has-text-centered" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
+            <h3 class="title is-4">⏩ Auto-regressive Scene Extension</h3>
+            <video controls autoplay muted playsinline loop style="border-radius: 8px; width: 100%;">
+              <source src="static/videos/ar_scene.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p class="has-text-justified mt-3">
+              This video demonstrates auto-regressive scene extension, where the model generates the third 6-second scene conditioned on the first two 6-second scenes (12s in total) as context.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Step 3: 放在 <style> 中或全局 CSS 文件中 -->
+  <style>
+    .fancy-title {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(90deg, #00f0ff, #a200ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 8px rgba(162, 0, 255, 0.5);
+      letter-spacing: 1px;
+      padding-bottom: 0.5em;
+      margin-bottom: 1.5em;
+      font-weight: 700;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
   <!-- <section class="hero teaser">
     <div class="container is-max-desktop">
       <div class="hero-body">
@@ -175,9 +238,15 @@
               <td colspan="3">
                 <p>
                   <i>Mask<sup>2</sup>DiT</i> is a dual-mask diffusion transformer designed for multi-scene video generation under a multi-prompt setting. Built upon the scalable DiT architecture, it introduces two key components:<br>
-                  (1) A <b>symmetric binary attention mask</b> that ensures fine-grained alignment between each text prompt and its corresponding video segment, allowing the model to focus on scene-specific guidance while maintaining intra-segment visual coherence.<br>
-                  (2) A <b>segment-level conditional mask</b> that enables auto-regressive scene extension by conditioning the generation of each new scene on the preceding segments.<br>
-                  To support this design, the model is trained in two stages: pretraining on concatenated single-scene clips to adapt to longer sequences, followed by fine-tuning on curated multi-scene datasets to improve consistency and alignment. During inference, these masking mechanisms guide the model to generate coherent and semantically aligned multi-scene videos, showing significant improvements over state-of-the-art baselines in both objective metrics and human evaluations.
+                  <span style="display:block; text-indent: 2em;">
+                    (1) A <b>symmetric binary attention mask</b> that ensures fine-grained alignment between each text prompt and its corresponding video segment, allowing the model to focus on scene-specific guidance while maintaining intra-segment visual coherence.
+                  </span>
+                  <span style="display:block; text-indent: 2em;">
+                    (2) A <b>segment-level conditional mask</b> that enables auto-regressive scene extension by conditioning the generation of each new scene on the preceding segments.
+                  </span>
+                  <span style="display:block; margin-top: 1em;">
+                    To support this design, the model is trained in two stages: pretraining on concatenated single-scene clips to adapt to longer sequences, followed by fine-tuning on curated multi-scene datasets to improve consistency and alignment. During inference, these masking mechanisms guide the model to generate coherent and semantically aligned multi-scene videos, showing significant improvements over state-of-the-art baselines in both objective metrics and human evaluations.
+                  </span>
                 </p>
 
               </td>
