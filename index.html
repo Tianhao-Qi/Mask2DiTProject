@@ -142,7 +142,7 @@
           <div class="box has-text-centered" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
             <h3 class="title is-4">🎬 Fixed-Scene Generation</h3>
             <video controls autoplay muted playsinline loop style="border-radius: 8px; width: 100%;">
-              <source src="static/videos/fixed_scene.mp4" type="video/mp4" />
+              <source src="static/videos/fixed_scenes.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <p class="has-text-justified mt-3">
@@ -154,7 +154,7 @@
         <!-- Auto-regressive Scene Extension -->
         <div class="column is-half">
           <div class="box has-text-centered" style="transition: transform 0.3s ease, box-shadow 0.3s ease;">
-            <h3 class="title is-4">⏩ Auto-regressive Scene Extension</h3>
+            <h3 class="title is-4">⏩ Auto-Regressive Scene Extension</h3>
             <video controls autoplay muted playsinline loop style="border-radius: 8px; width: 100%;">
               <source src="static/videos/ar_scene.mp4" type="video/mp4" />
               Your browser does not support the video tag.
@@ -256,56 +256,445 @@
   </section>
   <!--End paper poster -->
 
-  <!-- Video grid Extension -->
-  <!-- <section class="hero is-light is-small">
+  <!-- Video grid single ref -->
+  <section class="section hero is-small is-light">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="section-title">
-          <h2 class="title is-2 is-centered">More Examples</h2>
+      <div class="container is-fullhd wide-video-container"> <!-- 修改宽度限制 -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column custom-width">
+            <h2 class="title is-2">Comparisons with State-of-the-Arts</h2>
+            <div class="content has-text-justified">
+              <td><img src="static/images/quantitative.png" alt="" style="max-width: 1200px; width: 100%; height: auto; display: block; margin: 0 auto;" /></td>
+              <p>
+                <b>Quantitatively</b>: <b><i>Mask²DiT</i></b> consistently outperforms state-of-the-art baselines in multi-scene video generation, achieving superior Visual and Sequence Consistency and delivering the best visual quality (lowest FVD), while maintaining competitive semantic alignment. In addition, it supports auto-regressive scene extension and effectively maintains both visual and semantic consistency between the generated and preceding scenes.
+              </p>
+            </div>
+          </div>
         </div>
   
-        <div id="results-carousel-more" class="carousel results-carousel">
-  
-          <div class="item item-puppet">
-            <div class="carousel-content">
-              <img src="static/images/more_1.png"
-                     alt="Puppet."/>
+        <!-- ✅ 放大后的视频网格 -->
+        <div class="box mt-5">
+          <h3 class="title is-4 has-text-centered">Qualitative Video Comparisons</h3>
+
+          <p class="has-text-justified mb-4">
+            <b><i>Mask²DiT</i></b> delivers significantly better visual coherence than SOTA baselines, demonstrating superior consistency in character appearance, background integrity, and overall style across multi-scene videos.
+          </p>
+        
+          <!-- Script 1 -->
+          <div class="box">
+            <h4 class="title is-5">Script 1</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+        
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script1_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+        
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script1_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+        
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script1_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+        
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script1_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+        
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script1_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+        
             </div>
           </div>
-  
-          <div class="item item-puppet">
-            <div class="carousel-content">
-              <img src="static/images/more_2.png"
-                     alt="Puppet."/>
+
+          <!-- Script 2 -->
+          <div class="box">
+            <h4 class="title is-5">Script 2</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script2_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script2_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script2_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script2_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script2_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
             </div>
           </div>
-  
-          <div class="item item-puppet">
-            <div class="carousel-content">
-              <img src="static/images/more_3.png"
-                     alt="Puppet."/>
+
+          <!-- Script 3 -->
+          <div class="box">
+            <h4 class="title is-5">Script 3</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script3_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script3_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script3_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script3_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script3_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
             </div>
           </div>
+
+          <!-- Script 4 -->
+          <div class="box">
+            <h4 class="title is-5">Script 4</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script4_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script4_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script4_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script4_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script4_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Script 5 -->
+          <div class="box">
+            <h4 class="title is-5">Script 5</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script5_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script5_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script5_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script5_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script5_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Script 6 -->
+          <div class="box">
+            <h4 class="title is-5">Script 6</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script6_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script6_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script6_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script6_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script6_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Script 7 -->
+          <div class="box">
+            <h4 class="title is-5">Script 7</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script7_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script7_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script7_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script7_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script7_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Script 8 -->
+          <div class="box">
+            <h4 class="title is-5">Script 8</h4>
+            <div class="columns is-multiline is-mobile is-variable is-2">
+
+              <!-- CogVideoX -->
+              <div class="column has-text-centered">
+                <p><b>CogVideoX</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script8_cogvideox.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- StoryDiffusion -->
+              <div class="column has-text-centered">
+                <p><b>StoryDiffusion</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script8_storydiffusion.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- TALC -->
+              <div class="column has-text-centered">
+                <p><b>TALC</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script8_talc.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- VideoStudio -->
+              <div class="column has-text-centered">
+                <p><b>VideoStudio</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script8_videostudio.mp4" type="video/mp4">
+                </video>
+              </div>
+
+              <!-- Mask²DiT -->
+              <div class="column has-text-centered">
+                <p><b>Mask<sup>2</sup>DiT</b></p>
+                <video controls autoplay muted playsinline loop style="height: 200px; width: auto; max-width: 100%; border-radius: 6px;">
+                  <source src="static/videos/script8_mask2dit.mp4" type="video/mp4">
+                </video>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End video grid single ref -->
+
+  <!-- <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Auto-Regressive Scene Extension</h2>
+      <div class="box">
+        <div class="columns is-multiline is-mobile">
+          <div class="column is-one-third has-text-centered">
+            <video controls muted playsinline width="100%">
+              <source src="static/videos/ar_video1.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column is-one-third has-text-centered">
+            <video controls muted playsinline width="100%">
+              <source src="static/videos/ar_video2.mp4" type="video/mp4">
+            </video>
+          </div>
   
+          <div class="column is-one-third has-text-centered">
+            <video controls muted playsinline width="100%">
+              <source src="static/videos/ar_video3.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
   </section> -->
-  <!-- End video grid multi ref -->
-
-  <!--BibTex citation -->
-  <!-- <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>@article{tokenflow2023,
-        title = {TokenFlow: Consistent Diffusion Features for Consistent Video Editing},
-        author = {Geyer, Michal and Bar-Tal, Omer and Bagon, Shai and Dekel, Tali},
-        journal={arXiv preprint arxiv:2307.10373},
-        year={2023}
-        }</code></pre>
-    </div>
-  </section> -->
-  <!--End BibTex citation -->
 
   <footer class="footer">
     <div class="container">
